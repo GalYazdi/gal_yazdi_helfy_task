@@ -49,7 +49,8 @@ Base URL: `http://localhost:4000/api/tasks`
 
 ## Assumptions & Design Decisions
 
-- Used plain React with useState/useEffect, no form libraries like react-hook-form
+- Used JavaScript instead of TypeScript because the provided file structure included `.js` files, so I assumed JS was the intended language
+- Used plain React with useState/useEffect, no form libraries like react-hook-form or TanStack Query for fetching
 - No component libraries like shadcn. all components are written from scratch
 - CSS modules for styling instead of a framework, to keep it simple and scoped
 - The endless carousel is built manually using the clone-edges technique - the first and last items are duplicated at the edges so the loop feels seamless without any jumps
@@ -59,5 +60,3 @@ Base URL: `http://localhost:4000/api/tasks`
 
 - Backend: ~1 hour
 - Frontend: ~2 hours
-
-
