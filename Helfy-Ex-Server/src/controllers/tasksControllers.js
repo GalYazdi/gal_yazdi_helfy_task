@@ -13,7 +13,7 @@ export const getTasks = (req, res) => {
 
 export const addTask = (req, res) => {
   const { title, description, priority } = req.body;
-  if (!title) return res.status(StatusCodes.BAD_REQUEST).json({ error: 'title is required' });
+  if (!title || !description || !priority) return res.status(StatusCodes.BAD_REQUEST).json({ error: 'title, description and priority are required' });
   const task = createTask({ title, description, priority });
   res.status(StatusCodes.CREATED).json(task);
 };

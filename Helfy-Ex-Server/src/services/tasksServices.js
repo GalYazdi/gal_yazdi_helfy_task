@@ -3,7 +3,7 @@ let nextId = 1;
 
 export const getAllTasks = () => tasks;
 
-export const createTask = ({ title, description, priority = 'medium' }) => {
+export const createTask = ({ title, description, priority }) => {
   const task = {
     id: nextId++,
     title,
