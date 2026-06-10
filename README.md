@@ -54,7 +54,7 @@ Base URL: `http://localhost:4000/api/tasks`
 - No component libraries like shadcn. all components are written from scratch
 - CSS modules for styling instead of a framework, to keep it simple and scoped
 - The endless carousel is built manually using the clone-edges technique - the first and last items are duplicated at the edges so the loop feels seamless without any jumps
-- Disabled the prev/next carousel buttons while the slide animation is playing to prevent blank slides from appearing on fast clicks
+- Disabled the prev/next carousel buttons while the slide animation is playing to prevent blank slides from appearing on fast clicks. I would implement lazy loading and fetch an initial batch of tasks and load more as the user approaches the end, instead of disable buttons. I didnt do this to stay aligned with the provided API definitions and avoid modifying them and lack of time.
 
 ## Time Spent
 
