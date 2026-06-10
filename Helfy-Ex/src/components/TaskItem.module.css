@@ -1,0 +1,93 @@
+.card {
+  margin-top: 12px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.priority {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: fit-content;
+}
+
+.priorityLow {
+  background: green;
+  color: white;
+}
+
+.priorityMedium {
+  background: orange;
+  color: white;
+}
+
+.priorityHigh {
+  background: red;
+  color: white;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.completed {
+  color: gray;
+}
+
+.description {
+  color: black;
+  font-size: 0.9rem;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions button {
+  padding: 6px 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.actions button:hover {
+  background: #eee;
+}
+
+.confirm {
+  font-size: 0.9rem;
+  color: red;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confirmBtns {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  font-size: 0.85rem;
+  background: white;
+}
+
+.confirmBtns:hover {
+  background: #eee;
+}

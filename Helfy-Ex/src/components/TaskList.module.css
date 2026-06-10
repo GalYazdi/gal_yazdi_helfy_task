@@ -1,0 +1,32 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.carouselWrapper {
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+}
+
+.carouselSlide {
+  min-width: 100%;
+}
+
+.navBtn {
+  padding: 8px 14px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.navBtn:hover {
+  background: #ececec;
+}

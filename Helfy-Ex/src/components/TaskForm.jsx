@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { addTask } from "../services/api";
+import { addTask, updateTask } from "../services/api";
+import styles from "./TaskForm.module.css";
 
-const TaskForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("low");
+const TaskForm = ({ task, onClose }) => {
+  const [title, setTitle] = useState(task?.title || "");
+  const [description, setDescription] = useState(task?.description || "");
+  const [priority, setPriority] = useState(task?.priority || "low");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -13,19 +14,28 @@ const TaskForm = () => {
 
     if (!title || !description) {
       setError("One or more field is missing");
+      setTimeout(() => setError(""), 3000);
       return;
     }
 
-    await addTask({ title, description, priority });
-    setTitle("");
-    setDescription("");
-    setPriority("");
+    if (task) {
+      await updateTask(task.id, { title, description, priority });
+    } else {
+      await addTask({ title, description, priority });
+      setTitle("");
+      setDescription("");
+      setPriority("low");
+    }
+
     setError("");
     setSuccess(true);
+    setTimeout(() => setSuccess(false), 3000);
+    
+    if (onClose) onClose();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Title"
@@ -43,9 +53,9 @@ const TaskForm = () => {
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      {error && <span>{error}</span>}
-      {success && <span>Task added successfully!</span>}
-      <button type="submit">Add Task</button>
+      {error && <span className={styles.error}>{error}</span>}
+      {success && <span className={styles.success}>{task ? "Task updated!" : "Task added!"}</span>}
+      <button type="submit" className={styles.submitBtn}>{task ? "Update Task" : "Add Task"}</button>
     </form>
   );
 };

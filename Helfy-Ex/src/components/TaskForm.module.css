@@ -1,0 +1,50 @@
+.form {
+  margin-top: 8px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form input,
+.form select {
+  padding: 10px 12px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: blue;
+  outline: none;
+}
+
+.form .submitBtn {
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+
+}
+
+.form .submitBtn:hover {
+  background: #1102e6;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.success {
+  color: green;
+  font-size: 0.85rem;
+}
